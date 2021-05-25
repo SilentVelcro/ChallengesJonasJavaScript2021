@@ -147,13 +147,49 @@
 
 ///////////////////////////////////////////////////////////////////////////#4
 
-//1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement � (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
+// //1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement � (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
 
-const bill = 275;
-const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// const bill = 275;
+// const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 
 
-//2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value 316.25”
-console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+// //2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value 316.25”
+// console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 
 ///////////////////////////////////////////////////////////////////////////#5
+
+// 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
+const calcAverage = (a, b, c) => (a + b + c) / 3;
+console.log(calcAverage(3, 4, 5));
+
+// 2. Use the function to calculate the average for both teams
+// TEST 1
+let dolphinsScore = calcAverage(44, 23, 71);
+let koalasScore = calcAverage(65, 54, 49);
+console.log(dolphinsScore, koalasScore);
+
+// 3. Create a function 'checkWinner' that takes the average score of each team 
+// as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner 
+// to the console, together with the victory points, according to the rule above. 
+// Example: "Koalas win (30 vs. 13)"
+const checkWinner = function(avgDolhins, avgKoalas) {
+    if (avgDolhins >= 2 * avgKoalas) {
+        console.log(`Dolphins win! (${avgDolhins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= 2 * avgDolhins) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolhins})`);
+    } else {
+        console.log('No team wins...')
+    }
+}
+
+// 4. Use the 'checkWinner' function to determine the winner for both Data 1 and 
+// Data 2
+checkWinner(dolphinsScore, koalasScore);
+
+checkWinner(576, 111); 
+
+// TEST 2
+dolphinsScore = calcAverage(85, 54, 41);
+koalasScore = calcAverage(23, 34, 27);
+console.log(dolphinsScore, koalasScore);
+checkWinner(dolphinsScore, koalasScore);
