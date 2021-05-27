@@ -1,4 +1,4 @@
-///////////////////////////////////////////////////////////////////////////#1
+/////////////////////////////////////////////////////////////////////////// #1
 
 // //1 Store Mark's and John's mass and height in variables
 // const massMark = 95;
@@ -26,7 +26,7 @@
 // const markIsHigher = bmis["mark"] > bmis["john"]
 // console.log({ markIsHigher });
 
-///////////////////////////////////////////////////////////////////////////#2
+/////////////////////////////////////////////////////////////////////////// #2
 
 // //1. Print a nice output to the console, saying who has the higher BMI. The message is either "Mark's BMI is higher than John's!" or "John's BMI is higher than Mark's!"
 // const massMark = 95;
@@ -58,7 +58,7 @@
 //   console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark})!`)
 // }
 
-///////////////////////////////////////////////////////////////////////////#3
+/////////////////////////////////////////////////////////////////////////// #3
 
 // //1. Calculate the average score for each team, using the test data below
 
@@ -145,7 +145,7 @@
 //   console.log("Draw");
 // }
 
-///////////////////////////////////////////////////////////////////////////#4
+/////////////////////////////////////////////////////////////////////////// #4
 
 // //1. Calculate the tip, depending on the bill value. Create a variable called 'tip' for this. It's not allowed to use an if/else statement � (If it's easier for you, you can start with an if/else statement, and then try to convert it to a ternary operator!)
 
@@ -156,40 +156,58 @@
 // //2. Print a string to the console containing the bill value, the tip, and the final value (bill + tip). Example: “The bill was 275, the tip was 41.25, and the total value 316.25”
 // console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
 
-///////////////////////////////////////////////////////////////////////////#5
+/////////////////////////////////////////////////////////////////////////// Part II - #1 - p.9
 
-// 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
-const calcAverage = (a, b, c) => (a + b + c) / 3;
-console.log(calcAverage(3, 4, 5));
+// // 1. Create an arrow function 'calcAverage' to calculate the average of 3 scores
+// const calcAverage = (a, b, c) => (a + b + c) / 3;
+// console.log(calcAverage(3, 4, 5));
 
-// 2. Use the function to calculate the average for both teams
-// TEST 1
-let dolphinsScore = calcAverage(44, 23, 71);
-let koalasScore = calcAverage(65, 54, 49);
-console.log(dolphinsScore, koalasScore);
+// // 2. Use the function to calculate the average for both teams
+// // TEST 1
+// let dolphinsScore = calcAverage(44, 23, 71);
+// let koalasScore = calcAverage(65, 54, 49);
+// console.log(dolphinsScore, koalasScore);
 
-// 3. Create a function 'checkWinner' that takes the average score of each team 
-// as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner 
-// to the console, together with the victory points, according to the rule above. 
-// Example: "Koalas win (30 vs. 13)"
-const checkWinner = function(avgDolhins, avgKoalas) {
-    if (avgDolhins >= 2 * avgKoalas) {
-        console.log(`Dolphins win! (${avgDolhins} vs. ${avgKoalas})`);
-    } else if (avgKoalas >= 2 * avgDolhins) {
-        console.log(`Koalas win (${avgKoalas} vs. ${avgDolhins})`);
-    } else {
-        console.log('No team wins...')
-    }
+// // 3. Create a function 'checkWinner' that takes the average score of each team 
+// // as parameters ('avgDolhins' and 'avgKoalas'), and then logs the winner 
+// // to the console, together with the victory points, according to the rule above. 
+// // Example: "Koalas win (30 vs. 13)"
+// const checkWinner = function(avgDolhins, avgKoalas) {
+//     if (avgDolhins >= 2 * avgKoalas) {
+//         console.log(`Dolphins win! (${avgDolhins} vs. ${avgKoalas})`);
+//     } else if (avgKoalas >= 2 * avgDolhins) {
+//         console.log(`Koalas win (${avgKoalas} vs. ${avgDolhins})`);
+//     } else {
+//         console.log('No team wins...')
+//     }
+// }
+
+// // 4. Use the 'checkWinner' function to determine the winner for both Data 1 and 
+// // Data 2
+// checkWinner(dolphinsScore, koalasScore);
+
+// checkWinner(576, 111); 
+
+// // TEST 2
+// dolphinsScore = calcAverage(85, 54, 41);
+// koalasScore = calcAverage(23, 34, 27);
+// console.log(dolphinsScore, koalasScore);
+// checkWinner(dolphinsScore, koalasScore);
+
+/////////////////////////////////////////////////////////////////////////// Part II - #2 - p.10
+
+// 1. Write a function 'calcTip' that takes any bill value as an input and returns the corresponding tip, calculated based on the rules above (you can check out the code from first tip calculator challenge if you need to). Use the function type you like the most. Test the function using a bill value of 100.
+const calcTip = function(bill) {
+    return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
 }
 
-// 4. Use the 'checkWinner' function to determine the winner for both Data 1 and 
-// Data 2
-checkWinner(dolphinsScore, koalasScore);
+//2. And now let's use arrays! So create an array 'bills' containing the test data below
+const bills = [125, 555, 44];
 
-checkWinner(576, 111); 
+//3. Create an array 'tips' containing the tip value for each bill, calculated from the function you created before.
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
 
-// TEST 2
-dolphinsScore = calcAverage(85, 54, 41);
-koalasScore = calcAverage(23, 34, 27);
-console.log(dolphinsScore, koalasScore);
-checkWinner(dolphinsScore, koalasScore);
+//4. Bonus: Create an array 'total' containing the total values, so the bill + tip
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]]; 
+console.log(bills, tips, totals);
+///////////////////////////////////////////////////////////////////////////
