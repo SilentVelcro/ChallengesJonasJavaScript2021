@@ -254,36 +254,82 @@
 
 /////////////////////////////////////////////////////////////////////////// Part II - #4 - p.12
 
-// 1. Create an array 'bills' containing all 10 test bill values
-const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+// // 1. Create an array 'bills' containing all 10 test bill values
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
 
-// 2. Create empty arrays for the tips and the totals ('tips' and 'totals')
-const tips = []
-const totals = []
+// // 2. Create empty arrays for the tips and the totals ('tips' and 'totals')
+// const tips = []
+// const totals = []
 
-// 3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
-const calcTip = function (bill) {
-    return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
-}
+// // 3. Use the 'calcTip' function we wrote before (no need to repeat) to calculate tips and total values (bill + tip) for every bill value in the bills array. Use a for loop to perform the 10 calculations!
+// const calcTip = function (bill) {
+//     return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// }
 
-// 4.
-for (let i = 0; i < bills.length; i++) {
-    const tip = calcTip(bills[i]);
-    tips.push(tip);
-    totals.push(tip + bills[i]);
-}
-console.log(bills, tips, totals);
+// // 4.
+// for (let i = 0; i < bills.length; i++) {
+//     const tip = calcTip(bills[i]);
+//     tips.push(tip);
+//     totals.push(tip + bills[i]);
+// }
+// console.log(bills, tips, totals);
 
 
-//<----- this is just a function for the averaging numbers.
-const calcAverage = function (arr) {
-    let sum = 0;
-    for (let i = 0; i < arr.length; i++) {
-        // sum = sum + arr[i];  
-        sum += arr[i];   // 280 & 281 do the same thing 
-    }
-    return sum / arr.length;
-}
-console.log(calcAverage([2, 3, 7]));
-console.log(calcAverage(totals));
-console.log(calcAverage(tips));
+// //<----- this is just a function for the averaging numbers.
+// const calcAverage = function (arr) {
+//     let sum = 0;
+//     for (let i = 0; i < arr.length; i++) {
+//         // sum = sum + arr[i];  
+//         sum += arr[i];   // 280 & 281 do the same thing 
+//     }
+//     return sum / arr.length;
+// }
+// console.log(calcAverage([2, 3, 7]));
+
+// console.log(calcAverage(totals));
+// console.log(calcAverage(tips));
+
+// ///////////////////////////////////// JOHN HILL'S WAY --- taking FOR LOOPS and using MAP FUNCTION INSTEAD
+
+// const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+
+// const calcTip = (bill) => {
+//     return bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+// }
+
+// //---- MAPS RETURNS A VALUE
+// //--anonymous function callback
+// const tips = bills.map((bill) => {
+//     return calcTip(bill)
+// });
+
+// const totals = tips.map((tip, i) => {
+//     return tip + bills[i]
+// });
+
+// // console.log(bills, tips, totals);
+
+// ////////////// FILTERING
+
+// // FILTER RETURNS A BOOLEAN
+// const largeBills = bills.filter((bill) => {
+//     return bill >= 50
+// });
+
+// const smallBills = bills.filter((bill) => {
+//     return bill <= 50
+// });
+
+// // CALCULATE EVEN
+// const evenBills = bills.filter((bill) => {
+//     return bill % 2 === 0
+// })
+
+// // CACULATE ODD
+// const oddBills = bills.filter((bill) => {
+//     return bill % 2 === 1
+// })
+
+// console.log(bills, largeBills, smallBills, evenBills, oddBills)
+
+/////////////////////////////////////
